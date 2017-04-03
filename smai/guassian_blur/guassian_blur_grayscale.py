@@ -1,7 +1,7 @@
 import Image
 import numpy as np
 import math
-
+import sys
 
 def load_image(fileName):
 	img=Image.open(fileName)
@@ -63,11 +63,11 @@ def convolveVertical(data,y):
 		data_copy[j]=row
 	data=data_copy
 
-fileName="cat.jpg"
+fileName="indiagate.jpg"
 data=load_image(fileName)
-print data
-print data.shape
-print len(data.shape)
+if len(data.shape) > 2 :
+	print " error : unable to process colour image "
+	sys.exit(1)
 standardDeviation=3.0
 g_x,g_y=findGuassianValues(standardDeviation)
 
