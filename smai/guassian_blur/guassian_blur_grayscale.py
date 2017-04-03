@@ -63,7 +63,7 @@ def convolveVertical(data,y):
 		data_copy[j]=row
 	data=data_copy
 
-fileName="indiagate.jpg"
+fileName="cat.jpg"
 data=load_image(fileName)
 if len(data.shape) > 2 :
 	print " error : unable to process colour image "
